@@ -1,9 +1,5 @@
 const occurrences = require('../lib/02_counting_words');
 
-test('#insertDash should handle empty string', () => {
-  expect(insertDash("")).toBe("");
-});
-
 test("Should return 0 if the initial text is empty", () => {
   expect(occurrences("", "hello")).toBe(0);
 });
