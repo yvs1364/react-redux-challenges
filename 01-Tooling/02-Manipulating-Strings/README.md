@@ -1,4 +1,4 @@
-This folder contains a few exercises about [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String). ES6 brings a lot of nice features to this class such as [Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals).
+This folder contains a few exercises about [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String). ES6 brings a lot of nice features to this class such as [Template literals](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals). [Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array) are also augmented with Ruby-like functions: [`map`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map), [`join`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/join), [`forEach`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach).
 
 Make sure you are in the right folder and you download the necessary NPM packages before starting!
 
