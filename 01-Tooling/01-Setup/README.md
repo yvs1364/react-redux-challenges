@@ -127,5 +127,7 @@ You are now ready to work with a modern JavaScript environment, using ES6 syntax
 | REPL             | `irb`         | `node`         |
 | Package Manager  | `bundle`      | `yarn`         |
 | Project File     | `Gemfile`     | `package.json` |
+| Linter           | Rubocop       | Eslint         |
+| Test Framework   | Rspec         | Jest           |
 
 Let's code!
