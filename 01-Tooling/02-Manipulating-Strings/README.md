@@ -12,7 +12,7 @@ yarn install
 
 Let's start with a simple exercise. The goal is to implement an `insertDash(word)` function which takes a `String` as a parameter (the `word`) and returns a new `String` containing dashes between two consants.
 
-Exemple:
+Examples:
 
 ```js
 insertDash("hello"); // => "hel-lo"
@@ -28,4 +28,16 @@ yarn test
 
 It will run both [`eslint`](https://eslint.org/) (for style) and [`jest`](https://facebook.github.io/jest/) (for testing). Obviously, you want to have **no style error** and **pass all the tests**!
 
-Good luck!
+## 2 - Counting words
+
+For this second exercise, we want you to write an `occurrences(text, word)` function which takes two `String` as parameters: a long text, and a word. This method should return a `Number`, being the number of occurrences of the `word` in the given `text`. This search should be **case insensitive**.
+
+Examples:
+
+```js
+occurrences("", "hello"); // => 0
+occurrences("Lorem ipsum dolor sit amet, consectetur adipisicing elit", "lorem"); // => 1
+occurrences("a fat cat sat on a mat and ate a fat rat", "at"); // => 0
+occurrences("a fat cat sat on a mat and ate a fat rat", "cat"); // => 1
+occurrences("a fat cat sat on a mat and ate a fat rat", "fat"); // => 2
+```
