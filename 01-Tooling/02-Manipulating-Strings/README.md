@@ -17,7 +17,7 @@ Exemple:
 ```js
 insertDash("hello"); // => "hel-lo"
 insertDash("Le Wagon"); // => "Le Wagon"
-insertDash("anticonstitutionnellement"); // => "an-ticon-s-titution-nel-lement"
+insertDash("anticonstitutionnellement"); // => "an-ticon-s-titution-nel-lemen-t"
 ```
 
 Your job is to open the `lib/01_dash_insertion.js` file and implement the method. To test it, run the following command:
