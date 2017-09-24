@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import Article from '../lib/01_article.jsx';
 
-test('Article should produce the same HTML as in the example', () => {
+test('Article should produce the right HTML', () => {
   const article = renderer.create(
     <Article title="My fancy new product" body="Test it now!" />
   );
