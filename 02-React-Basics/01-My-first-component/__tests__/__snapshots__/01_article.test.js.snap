@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article should produce HTML 1`] = `
+<div
+  className="article"
+>
+  <h2>
+    My fancy new product
+  </h2>
+  <p>
+    Test it now!
+  </p>
+</div>
+`;
