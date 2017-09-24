@@ -122,12 +122,13 @@ If you don't have it already, please install the `Babel` package to use the ES6 
 
 You are now ready to work with a modern JavaScript environment, using ES6 syntax. Bear in mind the following analogies:
 
-| Tool             | Ruby          | JavaScript     |
-| ---------------- | ------------- | -------------- |
-| REPL             | `irb`         | `node`         |
-| Package Manager  | `bundle`      | `yarn`         |
-| Project File     | `Gemfile`     | `package.json` |
-| Linter           | Rubocop       | Eslint         |
-| Test Framework   | Rspec         | Jest           |
+| Tool               | Ruby          | JavaScript     |
+| ------------------ | ------------- | -------------- |
+| REPL               | `irb`         | `node`         |
+| Package Repository | Rubygems.org  | npmjs.com      |
+| Package Manager    | `bundle`      | `yarn`         |
+| Project File       | `Gemfile`     | `package.json` |
+| Linter             | Rubocop       | Eslint         |
+| Test Framework     | Rspec         | Jest           |
 
 Let's code!
