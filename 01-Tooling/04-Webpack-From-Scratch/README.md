@@ -56,7 +56,7 @@ See what we have here? A linter warning. By default, ESLint [recommends not to u
 /* eslint no-alert: "off" */
 ```
 
-```json
+```js
 // [...]
   "rules": {
     "no-alert": "off",
