@@ -1,7 +1,8 @@
 We just created our first `Article` component 💪
+
 Let's enhance it now by adding state and event handling to it!
 
-Make sure you are in the right folder and you download the necessary NPM packages before starting!
+Make sure you are in the right folder and download the necessary NPM packages before starting!
 
 ```bash
 cd ~/code/<github_nickname>/react-redux-challenges
@@ -21,5 +22,7 @@ Any time a user clicks on the `.article` div, the CSS `clicked` class should be 
 ### Hints
 
 Initial state should be defined in the `constructor()`.
+
 You should always use `this.setState()` to update a component's state.
+
 Don't forget to bind `this` to events callback functions!
