@@ -1,6 +1,6 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Article from '../lib/01_article.jsx';
+import Article from '../lib/01_article_with_state.jsx';
 
 test('Article should produce the right HTML', () => {
   const article = renderer.create(
@@ -8,5 +8,13 @@ test('Article should produce the right HTML', () => {
   );
 
   let tree = article.toJSON();
+  expect(tree).toMatchSnapshot();
+
+  tree.props.onClick();
+  tree = article.toJSON();
+  expect(tree).toMatchSnapshot();
+
+  tree.props.onClick();
+  tree = article.toJSON();
   expect(tree).toMatchSnapshot();
 });

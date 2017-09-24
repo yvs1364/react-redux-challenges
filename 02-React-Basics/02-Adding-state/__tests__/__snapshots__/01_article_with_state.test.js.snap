@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article should produce the right HTML 1`] = `
+<div
+  className="article"
+  onClick={[Function]}
+>
+  <h2
+    className="article-title"
+  >
+    My fancy new product
+  </h2>
+  <p>
+    Test it now!
+  </p>
+</div>
+`;
+
+exports[`Article should produce the right HTML 2`] = `
+<div
+  className="article"
+  onClick={[Function]}
+>
+  <h2
+    className="article-title"
+  >
+    My fancy new product
+  </h2>
+  <p>
+    Test it now!
+  </p>
+</div>
+`;
+
+exports[`Article should produce the right HTML 3`] = `
+<div
+  className="article"
+  onClick={[Function]}
+>
+  <h2
+    className="article-title"
+  >
+    My fancy new product
+  </h2>
+  <p>
+    Test it now!
+  </p>
+</div>
+`;
