@@ -12,22 +12,26 @@ For this challenge, we'll start from a [React boilerplate](https://github.com/le
 
 ```
 cd ~/code/<github_username>
-git clone git@github.com:lewagon/react-boilerplate.git
-mv react-boilerplate react-gifs
+
+# Download boilerplate to new project `react-gifs` (or any other name)
+git clone git@github.com:lewagon/react-boilerplate.git react-gifs
 cd react-gifs
+
+# Destroy existing boilerplate git history, and start a new one
 rm -rf .git
 git init
 git add .
 git commit -m "initial commit with boilerplate"
+
+# Create a GitHub repo, and push!
 hub create
 git push origin master
-stt
-```
 
-Install the dependencies listed in the `package.json` file with:
-
-```
+# Install the dependencies listed in the `package.json` file with:
 yarn install
+
+# Time to open Sublime Text and code.
+stt
 ```
 
 Launch a `webpack-dev-server` and open a browser at `http://localhost:8080`!
