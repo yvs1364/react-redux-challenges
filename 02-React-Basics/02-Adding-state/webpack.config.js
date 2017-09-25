@@ -1,7 +1,7 @@
 const path = require("path");
 
 module.exports = {
-  entry: path.resolve(__dirname, "./lib/01_article.jsx"),
+  entry: path.resolve(__dirname, "./lib/01_article_with_state.jsx"),
   output: {
     filename: "dist/bundle.js"
   },

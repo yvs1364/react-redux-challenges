@@ -21,7 +21,7 @@ Should produce the following HTML:
 
 ```html
 <div class="article">
-  <h2 class="article-title">My fancy new product</h2>
+  <h2>My fancy new product</h2>
   <p>Test it now!</p>
 </div>
 ```
