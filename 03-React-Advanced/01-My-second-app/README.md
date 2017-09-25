@@ -8,7 +8,7 @@ This morning we'll code another React application with the same approach as yest
 
 Like yesterday, we'll start from [our React boilerplate](https://github.com/lewagon/react-boilerplate):
 
-```
+```bash
 cd ~/code/<github_username>
 
 # Download boilerplate to new project `react-flats`
