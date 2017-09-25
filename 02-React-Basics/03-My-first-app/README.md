@@ -57,7 +57,6 @@ $input-height: 34px;
 $margin-top: 20px;
 
 body {
-  color: white;
   background-color: white;
 }
 
