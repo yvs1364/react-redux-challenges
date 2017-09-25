@@ -50,7 +50,7 @@ Launch a `webpack-dev-server` and open a browser at `http://localhost:8080`!
 
 #### 4. Style
 
-We don't you to waste too much time on CSS today, so try to pick up the rules you need from this cheatsheet:
+We don't want you to waste too much time on CSS today, so try to pick up the rules you need from this cheatsheet:
 
 ```scss
 $input-height: 34px;
