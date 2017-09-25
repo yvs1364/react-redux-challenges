@@ -112,7 +112,7 @@ Go ahead and add this action. Then, update the redux state tree in `src/reducers
 
 This action can use the following fake DB (we don't have API calls yet):
 
-```json
+```js
 [
   { name: "Paris", address: "16 Villa Gaudelet, 75011 Paris", slug: "paris" },
   { name: "London", address: "14-22 Elder St, London E1 6BT", slug: "london" },
