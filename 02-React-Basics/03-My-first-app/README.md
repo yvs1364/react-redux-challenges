@@ -4,7 +4,7 @@ No tests for this challenge, let's create an App!
 
 The goal of this challenge is to code the Gifs app taken as an example during the lecture, and finish it!
 
-![Homer thinking](https://raw.githubusercontent.com/lewagon/react-redux-images/master/react/homer_thinking.gif)
+![Homer thinking](https://raw.githubusercontent.com/lewagon/react-redux-images/master/react/homer_thinking.png)
 
 #### 1. Setup
 
