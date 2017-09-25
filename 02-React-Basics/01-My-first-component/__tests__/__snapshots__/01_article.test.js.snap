@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Article should produce HTML 1`] = `
+exports[`Article should produce the right HTML 1`] = `
 <div
   className="article"
 >
