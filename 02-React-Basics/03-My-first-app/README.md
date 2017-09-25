@@ -40,7 +40,7 @@ Launch a `webpack-dev-server` and open a browser at `http://localhost:8080`!
 
 1. When a user types a query, the list of Gifs should display the 10 first results the `giphy-api` returns.
 1. When a user clicks on a gif from the list, it should appear on the main scene on the left.
-1. (Optional) When a user focuses in / out of the input, the frame holding the selected gif should turn blue / white.
+1. (Optional) When a user focuses in / out of the input, find a nice way to twist the UI on the left part (opacity, background-color, border...) to show your user he's in / out of the input!
 
 #### 3. Guidelines
 
