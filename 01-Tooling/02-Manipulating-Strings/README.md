@@ -10,7 +10,7 @@ yarn install
 
 ## 1 - Dash Insertion
 
-Let's start with a simple exercise. The goal is to implement an `insertDash(word)` function which takes a `String` as a parameter (the `word`) and returns a new `String` containing dashes between two consants.
+Let's start with a simple exercise. The goal is to implement an `insertDash(word)` function which takes a `String` as a parameter (the `word`) and returns a new `String` containing dashes between two consonants.
 
 Examples:
 
