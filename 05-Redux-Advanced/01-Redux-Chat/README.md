@@ -40,7 +40,13 @@ Think about how you will split this app. **Take a paper and a pencil ✏️**, a
 
 Done?
 
+<details><summary>View solution</summary><p>
+
 👉 Here's [our proposal](https://raw.githubusercontent.com/lewagon/react-redux-images/master/redux/redux-chat-components.png) (⚠️ Do not click on this link right away! Try to do it yourself before 🙏)
+
+</p></details>
+
+
 
 ## 3. Redux state tree
 
@@ -63,4 +69,8 @@ const initialState = {
 
 Done?
 
+<details><summary>View solution</summary><p>
+
 👉 Here's [our state proposal](https://gist.github.com/ssaunier/3b54ca3ba961e6f979a64d2302c1cd0e)  (⚠️ Again, do not click right away!)
+
+</p></details>
