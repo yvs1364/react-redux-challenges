@@ -133,4 +133,50 @@ This way, the `mapStateToProps()` method in `<MessageList />` will have some eff
 
 ### 2. Fetching messages from the API
 
+Time to create your first action! We need a `fetchMessages(channel)` that will be called in the `MessageList.componentWillMount()` lifecycle method. The channel to use will be taken from the redux state.
 
+The API you need to call is [documented here](https://github.com/lewagon/wagon-chat-api#wagon-chat-api-documentation).
+
+Here's a hint:
+
+```js
+fetch('https://wagon-chat.herokuapp.com/general/messages');
+```
+
+This action should return an action with a payload that will be resolved by the `ReduxPromise` middleware!
+
+### 3. Posting a message.
+
+Before call the API to post a new message, we need a new container. That would be `<MessageForm />`. It will contain a form with an `<input />` and a `<button />` to submit it. The input should be a [controlled component](https://facebook.github.io/react/docs/forms.html) with an `handleChange` function updating the **react** state of the component. This way, it's easy to read the value and to reset the value of the input to `''` just after the form submission.
+
+Implement an `handleSubmit` function which will call a new action creator:
+
+```js
+// src/actions/index.js
+export function createMessage(channel, author, content) {
+  // TODO
+}
+```
+
+Implement this action and the reducers to update the message list. Remember that reducers should return **new** object. To create a copy of an existing array, you can run:
+
+```js
+const beatles = [ 'john', 'paul', 'ringo' ];
+let newBeatles = beatles.slice(0);
+newBeatles.push('george');
+return newBeatles;  // `newBeatles` is a different array than `beatles`
+```
+
+The action creator should **call the [API](https://github.com/lewagon/wagon-chat-api#post-a-comment-post-channelmessages)**. To send a `POST` request to a JSON API with `fetch`, you can run:
+
+```js
+const body = { key: value, key2, value2, etc: 'etc...' };
+const promise = fetch(url, {
+  method: 'POST',
+  headers: {
+    'Accept': 'application/json',
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(body)
+}).then(r => r.json());
+```
