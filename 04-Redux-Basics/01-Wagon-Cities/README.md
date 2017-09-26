@@ -11,7 +11,7 @@ This time, we will start from the [Redux boilerplate](https://github.com/lewagon
 ```bash
 cd ~/code/<github_username>
 
-# Download boilerplate to new project `react-flats`
+# Download boilerplate to new project `wagon-cities`
 git clone git@github.com:lewagon/redux-boilerplate.git wagon-cities
 cd wagon-cities
 
