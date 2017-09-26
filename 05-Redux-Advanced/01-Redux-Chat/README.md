@@ -33,3 +33,13 @@ stt
 ```
 
 Launch a `webpack-dev-server` and open a browser at `http://localhost:8080`!
+
+## 2. Components / Containers
+
+Think about how you will split this app. Take a paper and a pencil, and try to draw the components.
+
+Done?
+
+👉 Here's [our proposal](https://raw.githubusercontent.com/lewagon/react-redux-images/master/redux/redux-chat-components.png) (⚠️ Do not click on this link right away! Try to do it yourself before 🙏)
+
+## 3. Redux state tree
