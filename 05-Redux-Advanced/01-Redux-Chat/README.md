@@ -36,10 +36,31 @@ Launch a `webpack-dev-server` and open a browser at `http://localhost:8080`!
 
 ## 2. Components / Containers
 
-Think about how you will split this app. Take a paper and a pencil, and try to draw the components.
+Think about how you will split this app. **Take a paper and a pencil ✏️**, and try to draw the components.
 
 Done?
 
 👉 Here's [our proposal](https://raw.githubusercontent.com/lewagon/react-redux-images/master/redux/redux-chat-components.png) (⚠️ Do not click on this link right away! Try to do it yourself before 🙏)
 
 ## 3. Redux state tree
+
+Before diving into the code, let's thing about the **Redux state**. We need to:
+
+1. Store a list of messages
+1. Store a list of channels
+1. Store the selected channel
+1. Store the current username
+
+Open your `src/index.jsx` and try to implement the relevant `initialState`:
+
+```js
+const initialState = {
+  // TODO
+};
+```
+
+💡 Before storing the username, you may need to [prompt](https://developer.mozilla.org/en-US/docs/Web/API/Window/prompt) the user!
+
+Done?
+
+👉 Here's [our state proposal](https://gist.github.com/ssaunier/3b54ca3ba961e6f979a64d2302c1cd0e)  (⚠️ Again, do not click right away!)
