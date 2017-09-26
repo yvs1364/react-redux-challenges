@@ -107,7 +107,7 @@ const App = () => {
 
 ### 4. Moving to Redux
 
-Instead of loading the list of cities in `App`, we should have an redux **action** triggered in the `CityList#componentDidMount()` method.
+Instead of loading the list of cities in `App`, we should have an redux **action** triggered in the `CityList#componentWillMount()` method.
 Go ahead and add this action. Then, update the redux state tree in `src/reducers/index.js` with a new `cities` key. This key will be handled by a new reducer to be created in `src/reducers/cities_reducer.js`.
 
 This action can use the following fake DB (we don't have API calls yet):
