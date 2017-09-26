@@ -4,7 +4,9 @@ Today, we'll continue to tame Redux with a new challenge: building a **multi-cha
 
 ![](https://raw.githubusercontent.com/lewagon/react-redux-images/master/redux/redux-chat.png)
 
-## 1. Setup
+## Getting started
+
+### 1. Setup
 
 Once again, we will start from the [Redux boilerplate](https://github.com/lewagon/redux-boilerplate).
 
@@ -34,7 +36,7 @@ stt
 
 Launch a `webpack-dev-server` and open a browser at `http://localhost:8080`!
 
-## 2. Components / Containers
+### 2. Components / Containers
 
 Think about how you will split this app. **Take a paper and a pencil ✏️**, and try to draw the components.
 
@@ -48,7 +50,7 @@ Done?
 
 
 
-## 3. Redux state tree
+### 3. Redux state tree
 
 Before diving into the code, let's thing about the **Redux state**. We need to:
 
@@ -75,7 +77,7 @@ Done?
 
 </p></details>
 
-## 4. Reducers
+### 4. Reducers
 
 For every key in the state, create a reducer and add it to the `combineReducers()` call. Every reducer can start with the [identity](https://en.wikipedia.org/wiki/Identity_function) reducer:
 
@@ -90,7 +92,7 @@ export default function(state = null, action) {
 
 We will soon add action handling to some of them.
 
-## 5. Redux middlewares
+### 5. Redux middlewares
 
 Now that you are familiar with Redux, know that in a real-life project, we always have to make AJAX calls. Also, we like to have actions logged in the console. That's why we'll always install these two middlewares:
 
@@ -98,7 +100,9 @@ Now that you are familiar with Redux, know that in a real-life project, we alway
 - [redux-promise](https://github.com/acdlite/redux-promise)
 
 
-## 6. Single Channel approach
+## Single Channel app
+
+### 1. Rendering a fake list of messages
 
 For this morning, we will ignore the `state.channels` and won't try to build the `<ChannelList />` container. Let's focus on what we need to have a nice list of messages. Let's try to make it pretty as well.
 
@@ -126,4 +130,7 @@ Don't bother with actions in the beginning. Connect your `<MessageList />` compo
 ```
 
 This way, the `mapStateToProps()` method in `<MessageList />` will have some effect.
+
+### 2. Fetching messages from the API
+
 
