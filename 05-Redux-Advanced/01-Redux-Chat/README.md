@@ -180,3 +180,16 @@ const promise = fetch(url, {
   body: JSON.stringify(body)
 }).then(r => r.json());
 ```
+
+### 4. Updating messages every X seconds
+
+You may now have noticed that you don't automatically get new messages from your buddy unless your **reload** the page. We'd like new message to appear automatically! We won't dive into a Websocket or ActionCable implementation, we'll rely on the good old school technique of [`setInterval`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval).
+
+In the `<MessageList />`, implement a interval in the `componentDidMount()` method and [clear](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/clearInterval) it in the `componentWillUnmount()` (that's a good practise). This interval should trigger the `fetchMessages(channel)` action.
+
+### 5. Scrolling the message list
+
+When you get too many messages, the list does not auto scroll to the bottom. That's quite annoying. To fix that, we can use the `scrollHeight` property of the message list DOM element, and set it to the `scrollTop` property.
+
+The problem is: how do I get the DOM element from within a React component? [That's how you do it](https://facebook.github.io/react/docs/refs-and-the-dom.html#adding-a-ref-to-a-dom-element).
+
