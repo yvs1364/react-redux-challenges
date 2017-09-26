@@ -1,6 +1,6 @@
-# Single Channel Chat
+# Redux chat
 
-Today, we'll continue to tame Redux with a new challenge: building a multi-channel chat application, just like Slack! Here is the wanted final result 👇
+Today, we'll continue to tame Redux with a new challenge: building a **multi-channel messaging application**, just like Slack! Here is the wanted final result 👇
 
 ![](https://raw.githubusercontent.com/lewagon/react-redux-images/master/redux/redux-chat.png)
 
