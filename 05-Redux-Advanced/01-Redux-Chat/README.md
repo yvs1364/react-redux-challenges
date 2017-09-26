@@ -74,3 +74,27 @@ Done?
 👉 Here's [our state proposal](https://gist.github.com/ssaunier/3b54ca3ba961e6f979a64d2302c1cd0e)  (⚠️ Again, do not click right away!)
 
 </p></details>
+
+## 4. Reducers
+
+For every key in the state, create a reducer and add it to the `combineReducers()` call. Every reducer can start with the [identity](https://en.wikipedia.org/wiki/Identity_function) reducer:
+
+```js
+export default function(state = null, action) {
+  switch (action.type) {
+    default:
+      return state;
+  }
+}
+```
+
+We will soon add action handling to some of them.
+
+## 5. Redux middlewares
+
+Now that you are familiar with Redux, know that in a real-life project, we always have to make AJAX calls. Also, we like to have actions logged in the console. That's why we'll always install these two middlewares:
+
+- [redux-logger](https://github.com/evgenyrodionov/redux-logger)
+- [redux-promise](https://github.com/acdlite/redux-promise)
+
+
