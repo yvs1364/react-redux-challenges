@@ -193,3 +193,41 @@ When you get too many messages, the list does not auto scroll to the bottom. Tha
 
 The problem is: how do I get the DOM element from within a React component? [That's how you do it](https://facebook.github.io/react/docs/refs-and-the-dom.html#adding-a-ref-to-a-dom-element).
 
+Where should you set the `scrollTop`? Look at the [component lifecycle methods](https://facebook.github.io/react/docs/react-component.html#the-component-lifecycle) and choose wisely.
+
+## Multi Channels app
+
+OK, time to handle several channels and a channel switch!
+
+### 1. Add the `<ChannelList />` container
+
+Remember this container? We chose to ignore it until now. This container will get the `channels` and `selectedChannel` from the Redux state and print a nice list, with the selected channel outlined (in bold for instance, like in the screenshot above).
+
+### 2. Changing the selected channel
+
+Once the `<ChannelList />` container is working, add a new `selectChannel(channel)` action. This action will be triggered when clicking on one of the channel in the list. Go back to the relevant reducers and implement a reaction to this action.
+
+### 3. Testing
+
+You want to validate all these user stories before declaring victory :tada:
+
+1. [ ] On page load, the browser prompts me for a username
+1. [ ] After the username prompt, the chat loads with a default channel selected. Messages appear and scroll down to the most recent
+1. [ ] Focus is set on message box on load
+1. [ ] I can type a message and post it. It instantly appears right above the message box, and the message box clears. Focus is kept on message box
+1. [ ] When I post a message, it's under the username I set on page load
+1. [ ] When I click on another channel, the messages from the previous one disappear, and the messages from the newly selected channel appear
+
+## Bonus
+
+### 1. Colorize usernames
+
+You may have noticed that Slack assigns a color to a username. You can replicate this behavior showcased in the screenshot above. [This StackOverflow thread](https://stackoverflow.com/questions/3426404/create-a-hexadecimal-colour-based-on-a-string-with-javascript) will help you.
+
+### 2. Emojis
+
+Have a look at [react-emojione](https://www.npmjs.com/package/react-emojione). Try to add it to the project and use it in the `<Message />` component.
+
+### 3. Deploy :tada:
+
+Don't forget to deploy your chat to GitHub Pages :)
