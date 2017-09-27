@@ -69,6 +69,8 @@ const store = createStore(reducers, initialState, middlewares);
 
 ## Home page
 
+### 1. Rendering a fake list of cars
+
 This will be our first `<Route>` in the `<Switch>`. You can name the component linked to this route `<CardsIndex>`.
 
 Before actually calling an API, you can use the following _fake_ data in the Redux initial state for `cars`:
@@ -81,3 +83,36 @@ Before actually calling an API, you can use the following _fake_ data in the Red
   { id: 4, brand: 'VW', model: 'Beetle', owner: 'George', plate: '1234-XD-75' }
 ]
 ```
+
+### 2. Fetching cars from the API
+
+You want to call the API and fetch all the cars for a **given garage**.
+
+The API you need to call is [documented here](https://github.com/lewagon/garage-api#readme).
+
+Here's a hint:
+
+```js
+fetch('https://wagon-garage-api.herokuapp.com/my-awesome-garage/cars');
+```
+
+This action should return an action with a payload that will be resolved by the `ReduxPromise` middleware!
+
+## Form page
+
+![](https://github.com/lewagon/react-redux-images/blob/master/redux/redux-garage-new.png)
+
+This will be the second `<Route>` of our app, for the container `<CardsNew>` to be created.
+
+TODO(Eschults)
+
+Once the call to the API is done, the app should [navigate by itself](https://stackoverflow.com/questions/31079081/programmatically-navigate-using-react-router) back to the home page, listing all cars.
+
+## Show page
+
+![](https://raw.githubusercontent.com/lewagon/react-redux-images/master/redux/redux-garage-show.png)
+
+This will be the thrid and last `<Route>` of our app, for the container `<CardsShow>` to be created. The goal is to display details about a given car (brand, model, owner and license plate).
+
+From this page, you should implement a **Delete** button which will remove the car from the inventory. This button should **call the API** to remove the car from the Database API. After deletion, it should navigate back to the index page.
+
