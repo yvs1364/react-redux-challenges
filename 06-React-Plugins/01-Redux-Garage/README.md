@@ -1,6 +1,6 @@
 # Redux garage 🚘
 
-![](https://reacttraining.com/react-router/android-chrome-144x144.png)
+[![](https://reacttraining.com/react-router/android-chrome-144x144.png)](https://reacttraining.com/react-router/)
 
 It's now time to get familiar with [React Router](https://reacttraining.com/react-router/). Today, we'll build an application for garage (car repair shop ⚒) owners: a way to keep track of the cars entering their garage. Basically, a little CRUD app backed by a REST API.
 
