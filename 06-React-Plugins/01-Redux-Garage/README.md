@@ -110,6 +110,9 @@ This will be the second `<Route>` of our app, for the container `<CarsNew>` to b
 1. Once the call to the API is done, the app should [navigate by itself](https://stackoverflow.com/questions/31079081/programmatically-navigate-using-react-router) back to the home page, listing all cars.
 1. Add a presence validation on each field (you can have a look [here](https://codesandbox.io/s/pQj03w7Y6) for guidance)
 1. Add a format validation on the plate license (should be all caps and no special characters)
+1. Add hints under each input when validations are not met
+1. The button should remain disabled until all validations are met
+
 
 ## Show page
 
