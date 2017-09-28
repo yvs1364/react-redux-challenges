@@ -43,14 +43,18 @@ Let's start with our database schema. Here is the bare minimum that we need for 
 
 The `users` table is already there thanks to the Rails template. Your job is to create the other models and run the migrations.
 
+💡 Open your models and add some back-end validations! For instance, a message should not have a blank content!
+
 ### Seed
 
 Create a `db/seeds.rb` file which:
 
-1. [Finds or creates](http://api.rubyonrails.org/v5.1/classes/ActiveRecord/Relation.html#method-i-find_or_create_by) a standard channel list (`general`, `paris`, `react` for instance)
-1. Finds or create a user (`youremail@yourprovider.com / testtest` for instance)
+1. Destroy messages, users and channels (in that order)
+1. Create some channels (`general`, `paris`, `react` for instance)
+1. Create some users (needs email / password)
+1. Create some messages in several challenges.
 
-Run the seed. It should be idempotent.
+Then run it:
 
 ```bash
 rails db:migrate
@@ -81,10 +85,19 @@ rails routes | grep -v user
 
 ❓ Do you understand why we need those four routes? Can you explain why? If not, talk to your buddy about it, then ask a TA.
 
+### Controllers
 
+Let's start with the API:
 
+```bash
+rails g controller api/v1/messages index create  --skip-template-engine --skip-routes
+```
 
+Go ahead and implement the two actions:
 
+1. You need a `before_action` to retrieve the `Channel` model
+1. For the `index` action, render the list of messages [as json](http://guides.rubyonrails.org/layouts_and_rendering.html#rendering-json)
+1. For the `create` action, use strong params and the `current_user` to create a message.
 
 
 
