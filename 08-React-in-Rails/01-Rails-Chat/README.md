@@ -44,3 +44,54 @@ Let's start with our database schema. Here is the bare minimum that we need for 
 The `users` table is already there thanks to the Rails template. Your job is to create the other models and run the migrations.
 
 ### Seed
+
+Create a `db/seeds.rb` file which:
+
+1. [Finds or creates](http://api.rubyonrails.org/v5.1/classes/ActiveRecord/Relation.html#method-i-find_or_create_by) a standard channel list (`general`, `paris`, `react` for instance)
+1. Finds or create a user (`youremail@yourprovider.com / testtest` for instance)
+
+Run the seed. It should be idempotent.
+
+```bash
+rails db:migrate
+```
+
+### Routes
+
+Here are the routes we need to implement:
+
+```ruby
+namespace :api, defaults: { format: :json } do
+  namespace :v1 do
+    resources :channels, only: [] do
+      resources :messages, only: [ :index, :create ]
+    end
+  end
+end
+
+resources :channels, only: [ :show ]
+root to: 'channels#show'
+```
+
+Go ahead and copy/paste them to your `config/routes.rb` file, then run the following command:
+
+```bash
+rails routes | grep -v user
+```
+
+❓ Do you understand why we need those four routes? Can you explain why? If not, talk to your buddy about it, then ask a TA.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
