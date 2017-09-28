@@ -93,18 +93,18 @@ Let's start with the API:
 rails g controller api/v1/messages index create  --skip-template-engine --skip-routes
 ```
 
-Go ahead and implement the two actions:
+Go ahead and implement the `index` first.
 
-1. You need a `before_action` to retrieve the `Channel` model
-1. For the `index` action, render the list of messages [as json](http://guides.rubyonrails.org/layouts_and_rendering.html#rendering-json)
-1. For the `create` action, use strong params and the `current_user` to create a message.
+- You need a `before_action` to retrieve the `Channel` model. Retrieve by `name`, not id.
+- For the `index` action, render the list of messages [as json](http://guides.rubyonrails.org/layouts_and_rendering.html#rendering-json)
 
+To test those controllers, you can launch the `rails s` and open your browser to [localhost:3000](http://localhost:3000). Log-in then:
 
-
-
-
+Go to [localhost:3000/api/v1/channels/general/messages](http://localhost:3000/api/v1/channels/general/messages). Do you see a JSON? Awesome!
 
 
+We'll leave the `create` action for later. You can go ahead.
 
+## Front-end
 
-
+Oops, could not load content.... Reload the page!
