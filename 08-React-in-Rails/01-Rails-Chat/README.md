@@ -393,6 +393,36 @@ fetch(url, {
 
 ### Dynamic channel list
 
+Have a look at your `initialState` in `app/javascript/chat/index.jsx`. The `channels` is **hard-coded**. We'd like to list **all the available channels** from the Rails Database. Basically, get this:
+
+```ruby
+Channel.all
+```
+
+How could the React app get his hand on the channel list? What's your first guess?
+
+<details><summary>View solution</summary><p>
+
+The first guess is to create an API endpoint to list the channels. We could then have an action calling this API and updating the Redux state. That's one way of doing it, but there is a simpler solution, considering that the channel list **won't vary in a browser session**:
+
+First we need to **pass information from the Rails view to the React app**. We will use the [`data-` HTML attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes):
+
+```erb
+<div id="chat_app"
+  data-channels=<%= Channel.all.to_json %>
+></div>
+```
+
+And then you can get this information back in React!
+
+```js
+const chatContainer = document.getElementById('chat_app'); // You should already have this line
+const channels = JSON.parse(chatContainer.dataset.channels).map(c => c.name);
+
+// Then use this `channels` in the initialState
+```
+
+</p></details>
 
 
 ### Adding a nickname
