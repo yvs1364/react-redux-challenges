@@ -2,6 +2,8 @@
 
 The goal of our last day is to build a connected chat application with Rails 5.1 and the [webpacker](https://github.com/rails/webpacker) gem. This app will be protected by a Devise sign in, so no more anonymous user chatting!
 
+![](https://raw.githubusercontent.com/lewagon/react-redux-images/master/rails/chat-rails-redux-paris-channel.png)
+
 ## Setup
 
 Make sure you have the latest `rails` installed, on a Ruby 2.4+ environment:
@@ -119,9 +121,11 @@ Go to [localhost:3000/api/v1/channels/general/messages](http://localhost:3000/ap
 ]
 ```
 
+⚠️If you just render the `@messages` as a JSON, it won't look like this ☝️, you need to work on some transformation to get the data right 😉
+
 
 We'll leave the `create` action for later. You can go ahead.
 
 ## Front-end
 
-Oops, could not load content.... Reload the page!
+Oops, problem with loading. Can you refresh the page?
