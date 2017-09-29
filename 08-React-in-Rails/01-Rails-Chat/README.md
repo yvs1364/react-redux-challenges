@@ -155,11 +155,120 @@ curl https://raw.githubusercontent.com/lewagon/chat-redux/master/assets/styleshe
 echo '@import "chat";' >> app/assets/stylesheets/components/_index.scss
 ```
 
-Then, let's import the React+Redux app:
+Then, let's import the Javascript part:
 
 ```bash
 mkdir app/javascript/chat # This is where the React+Redux app will now live.
+mkdir app/javascript/chat/actions
+mkdir app/javascript/chat/components
+mkdir app/javascript/chat/containers
+mkdir app/javascript/chat/reducers
+
+# Actions
+curl https://raw.githubusercontent.com/lewagon/chat-redux/master/src/actions/index.js > app/javascript/actions/index.js
+
+# Containers
+curl https://raw.githubusercontent.com/lewagon/chat-redux/master/src/containers/channel_list.jsx > app/javascript/chat/containers/channel_list.jsx
+curl https://raw.githubusercontent.com/lewagon/chat-redux/master/src/containers/message_form.jsx > app/javascript/chat/containers/message_form.jsx
+curl https://raw.githubusercontent.com/lewagon/chat-redux/master/src/containers/message_list.jsx > app/javascript/chat/containers/message_list.jsx
+
+# Components
+curl https://raw.githubusercontent.com/lewagon/chat-redux/master/src/components/app.jsx > app/javascript/chat/components/app.jsx
+curl https://raw.githubusercontent.com/lewagon/chat-redux/master/src/components/message.jsx > app/javascript/chat/components/message.jsx
+
+# Reducers
+curl https://raw.githubusercontent.com/lewagon/chat-redux/master/src/reducers/messages_reducer.js > app/javascript/chat/reducers/messages_reducer.js
 ```
 
-...
-Problem loading the rest of the page. Can you reload?
+OK, almost there. Let's have a look at the existing [src/index.jsx](https://github.com/lewagon/chat-redux/blob/master/src/index.jsx). Can you see the Redux state? It contains 4 keys:
+
+1. `messages`: storing the list of message of the current selected channel
+2. `channels`: the list of channels, hard-coded
+3. `currentUser`: the current username, again, hard-coded with a `prompt()` at page load
+4. `selectedChannel`: the current active channel
+
+We needed this because we were building a stand-alone React+Redux app with no real login. Now that we have a Rails with Devise, it's not the same. The "current user" concept lives in a cookie! This means that we can **get rid of `currentUser` in the state**.
+
+While we're at it, let's think about the `selectedChannel`. In the current app, we stored it in the state to be able to change it on click. Let's have a look at the Rails routes again:
+
+```bash
+rails routes | grep channels#show
+```
+
+See? The selected channel information will **now live in the URL**. So we can also drop the `selectedChannel` from the Redux state and use the `react-router` node module.
+
+OK, this is now what you should put in your `app/javascript/chat/index.jsx`
+
+```bash
+yarn add react-router-dom
+touch app/javascript/chat/index.jsx
+```
+
+```js
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import logger from 'redux-logger'
+import ReduxPromise from 'redux-promise';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+
+import App from './components/app';
+import messagesReducer from './reducers/messages_reducer';
+
+const chatContainer = document.getElementById('chat_app');
+
+const initialState = {
+  messages: [],
+  channels: [ 'general', 'react', 'paris' ], // TODO: get that from Rails DB.
+};
+
+const reducers = combineReducers({
+  messages: messagesReducer,
+  channels: (state = null, action) => state
+});
+
+const middlewares = applyMiddleware(logger, ReduxPromise);
+const store = createStore(reducers, initialState, middlewares);
+
+ReactDOM.render(
+  <Provider store={store}>
+    <BrowserRouter>
+      <Switch>
+        <Route path="/channels/:channel" component={App} />
+      </Switch>
+    </BrowserRouter>
+  </Provider>,
+  chatContainer
+);
+```
+
+It's now time to bind this `app/javascript/chat` react app with the `webpacker` gem. First we need to create a new **pack** that Rails will be aware of:
+
+```bash
+touch app/javascript/packs/chat.js
+```
+
+In this pack, we will just import the `app/javascript/chat/index.jsx` React root file:
+
+```js
+// app/javascript/packs/chat.js
+import '../chat';
+```
+
+Final touch, let's open our Rails view for the Channel show page
+
+```erb
+<div id="chat_app"></div>
+
+<% content_for :after_js do %>
+  <%= javascript_pack_tag "chat" %>
+<% end %>
+```
+
+And that should be it! Go to [localhost:3000/channels/general](http://localhost:3000/channels/general) and open the Chrome console. Do you get some React errors? Good you're on track!
+
+.
+.
+.
+Could not load the rest of the content. Can you refresh the page?
