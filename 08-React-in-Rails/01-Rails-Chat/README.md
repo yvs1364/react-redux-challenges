@@ -158,6 +158,8 @@ echo '@import "chat";' >> app/assets/stylesheets/components/_index.scss
 Then, let's import the Javascript part:
 
 ```bash
+# in your terminal:
+
 mkdir app/javascript/chat # This is where the React+Redux app will now live.
 mkdir app/javascript/chat/actions
 mkdir app/javascript/chat/components
@@ -205,6 +207,7 @@ touch app/javascript/chat/index.jsx
 ```
 
 ```js
+app/javascript/chat/index.jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
