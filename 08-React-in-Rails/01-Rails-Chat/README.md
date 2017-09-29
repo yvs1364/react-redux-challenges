@@ -100,7 +100,24 @@ Go ahead and implement the `index` first.
 
 To test those controllers, you can launch the `rails s` and open your browser to [localhost:3000](http://localhost:3000). Log-in then:
 
-Go to [localhost:3000/api/v1/channels/general/messages](http://localhost:3000/api/v1/channels/general/messages). Do you see a JSON? Awesome!
+Go to [localhost:3000/api/v1/channels/general/messages](http://localhost:3000/api/v1/channels/general/messages). Do you see a JSON? It should look like this, to help you with the React part:
+
+```json
+[
+  {
+    "id": 1,
+    "author": "ssaunier",
+    "content": "Welcome to #general!",
+    "created_at": "2017-09-28T19:05:00.094Z"
+  },
+  {
+    "id": 2,
+    "author": "edward",
+    "content": "Hello mates :wave:",
+    "created_at": "2017-09-28T19:05:00.105Z"
+  }
+]
+```
 
 
 We'll leave the `create` action for later. You can go ahead.
