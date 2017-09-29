@@ -128,4 +128,38 @@ We'll leave the `create` action for later. You can go ahead.
 
 ## Front-end
 
-Oops, problem with loading. Can you refresh the page?
+### Webpacker
+
+It's time to install the `webpacker` gem into our brand new Rails app!
+
+```ruby
+# Gemfile
+gem 'webpacker', '~> 3.0'
+```
+
+```bash
+rails webpacker:install
+rails webpacker:install:react
+```
+
+You should get a new `app/javascript` folder in your Rails app. This is where we're going to put our React Chat app!
+
+### Importing existing React app
+
+We won't start from scratch on this one, we already have a nice [lewagon/chat-redux](https://github.com/lewagon/chat-redux) repo ready to be used. Let's use it!
+
+Let's start with CSS:
+
+```bash
+curl https://raw.githubusercontent.com/lewagon/chat-redux/master/assets/stylesheets/application.scss > app/assets/stylesheets/components/_chat.scss
+echo '@import "chat";' >> app/assets/stylesheets/components/_index.scss
+```
+
+Then, let's import the React+Redux app:
+
+```bash
+mkdir app/javascript/chat # This is where the React+Redux app will now live.
+```
+
+...
+Problem loading the rest of the page. Can you reload?
