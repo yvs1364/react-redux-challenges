@@ -126,6 +126,30 @@ Go to [localhost:3000/api/v1/channels/general/messages](http://localhost:3000/ap
 
 We'll leave the `create` action for later. You can go ahead.
 
+Let's now create a regular controller for your Rails app:
+
+```bash
+rails g controller channels show --skip-routes
+```
+
+and put the following into this file:
+
+```ruby
+# app/controllers/channels_controller.rb
+class ChannelsController < ApplicationController
+  def show
+    if params[:id].blank?
+      redirect_to channel_path(Channel.first.name)
+    else
+      @channel = Channel.find_by(name: params[:id])
+      @channels = Channel.all
+    end
+  end
+end
+```
+
+You should have a boilerplate view when going to [`localhost:3000/channels/general`](http://localhost:3000/channels/general).
+
 ## Front-end
 
 ### Webpacker
@@ -270,6 +294,12 @@ Final touch, let's open our Rails view for the Channel show page
 <% content_for :after_js do %>
   <%= javascript_pack_tag "chat" %>
 <% end %>
+```
+
+Make sure you have this in your `app/views/layouts/application.html.erb` to get the `content_for` above to work!
+
+```erb
+<%= yield :after_js %>
 ```
 
 And that should be it! Go to [localhost:3000/channels/general](http://localhost:3000/channels/general) and open the Chrome console. Do you get some React errors? Good you're on track!
