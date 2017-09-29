@@ -271,7 +271,59 @@ Final touch, let's open our Rails view for the Channel show page
 
 And that should be it! Go to [localhost:3000/channels/general](http://localhost:3000/channels/general) and open the Chrome console. Do you get some React errors? Good you're on track!
 
-.
-.
-.
-Could not load the rest of the content. Can you refresh the page?
+### Some words about the `cross-origin` error
+
+In the Chrome console, you might now get this kind of errors:
+
+![](https://raw.githubusercontent.com/lewagon/react-redux-images/master/rails/rails-redux-cross-origin.png)
+
+Well, usually it means that the Rails back-end threw a **500**. Head to the **Network** tab in the Chrome console and check for this AJAX request being red:
+
+![](https://raw.githubusercontent.com/lewagon/react-redux-images/master/rails/rails-redux-cross-origin-500.png)
+
+You won't fix this error with your JavaScript code! Head over to the terminal logs to check out details about the Ruby error:
+
+![](https://raw.githubusercontent.com/lewagon/react-redux-images/master/rails/rails-redux-cross-origin-500-console.png)
+
+Fix the Ruby error, and reload the page! Also, in the chrome inspector, **scroll up** to the the real error message before the "cross-origin" notice. No need for the `rack-cors` gem as the React app **lives inside the same domain as the Rails app**. That's the beauty of the Webpacker gem! Both backend + frontend code **live in the same repository**.
+
+### Adapting the existing app
+
+There are some problems to fix on the current React+Redux app. Remember:
+
+- The `selectedChannel` is not in the Redux State anymore
+- The API has changed! We need to query our own Rails app now
+
+For the first problem, we need to remove the `selectedChannel` from all the `mapStateToProps()` functions and use the one **from the route**.
+
+The thing is that the components who need this information are not directly linkedin to the Route, and the information get lost along the way. Look:
+
+```jsx
+// app/javascript/chat/index.jsx
+
+// [...]
+<Route path="/channels/:channel" component={App} />
+```
+
+We need the `App` to transmit information given from the router to its children:
+
+```jsx
+// app/javascript/chat/components/app.jsx
+
+<ChannelList selectedChannel={props.match.params.channel} />
+<MessageList selectedChannel={props.match.params.channel} />
+```
+
+This way, the two `<ChannelList />` and `<MessageList />` components will get the selected channel back in their props.
+
+Regarding the other problem, your job is now to fix the Redux Action Creators! Open up the `app/javascript/chat/actions/index.js` and update the API URLs!
+
+💡 Updating the URLs won't be enough. You will still get **401 - Not Authorized**. It's because of Devise! Remember, the API controllers are protected by Devise, which means that we need to make **authenticated** API calls. How do we do that? Simple, we **transmit the Devise** cookie. Using `fetch`, this is how you do it:
+
+```js
+fetch(url, { credentials: "same-origin" })
+```
+
+💡 Go to the next section only when the messages load correctly for the **#general** channel, not before.
+
+
