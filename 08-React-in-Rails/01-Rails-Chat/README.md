@@ -194,7 +194,7 @@ mkdir app/javascript/chat/reducers
 yarn add react-emojione redux react-redux redux-logger redux-promise
 
 # Actions
-curl https://raw.githubusercontent.com/lewagon/chat-redux/master/src/actions/index.js > app/javascript/actions/index.js
+curl https://raw.githubusercontent.com/lewagon/chat-redux/master/src/actions/index.js > app/javascript/chat/actions/index.js
 
 # Containers
 curl https://raw.githubusercontent.com/lewagon/chat-redux/master/src/containers/channel_list.jsx > app/javascript/chat/containers/channel_list.jsx
@@ -390,6 +390,10 @@ fetch(url, {
 ```
 
 ## Bonus
+
+### Dynamic channel list
+
+
 
 ### Adding a nickname
 
