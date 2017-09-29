@@ -207,7 +207,7 @@ touch app/javascript/chat/index.jsx
 ```
 
 ```js
-app/javascript/chat/index.jsx
+// app/javascript/chat/index.jsx
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
