@@ -289,6 +289,8 @@ Fix the Ruby error, and reload the page! Also, in the chrome inspector, **scroll
 
 ### Adapting the existing app
 
+⚠️Before going further, open the `app/javascript/chat/containers/message_list.jsx` file and comment the line with `setInterval()`. We don't want to flood our back-end with faulty API request and the Chrome inspector with tons of errors.
+
 There are some problems to fix on the current React+Redux app. Remember:
 
 - The `selectedChannel` is not in the Redux State anymore
@@ -326,7 +328,10 @@ fetch(url, { credentials: "same-origin" })
 
 💡 Go to the next section only when the messages load correctly for the **#general** channel, not before.
 
+### Feature: changing channel
+
 .
 .
 .
-Could not load the rest of the content, can you refresh the page?
+💣 Could not load the rest of the page, can you try reloading it?
+
