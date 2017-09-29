@@ -326,4 +326,7 @@ fetch(url, { credentials: "same-origin" })
 
 💡 Go to the next section only when the messages load correctly for the **#general** channel, not before.
 
-
+.
+.
+.
+Could not load the rest of the content, can you refresh the page?
