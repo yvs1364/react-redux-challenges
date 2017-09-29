@@ -295,6 +295,7 @@ There are some problems to fix on the current React+Redux app. Remember:
 
 - The `selectedChannel` is not in the Redux State anymore
 - The API has changed! We need to query our own Rails app now
+- We don't have a `nickname` column in the `users` DB table. So we'll display the email instead (this should be handled in your `app/controllers/api/v1/messages_controller.rb`)
 
 For the first problem, we need to remove the `selectedChannel` from all the `mapStateToProps()` functions and use the one **from the route**.
 
@@ -328,10 +329,39 @@ fetch(url, { credentials: "same-origin" })
 
 💡 Go to the next section only when the messages load correctly for the **#general** channel, not before.
 
-### Feature: changing channel
+### Feature: Changing channel
 
-.
-.
-.
-💣 Could not load the rest of the page, can you try reloading it?
+As we changed the router and the Redux state, make sure this feature still works and loads differnet messages.
 
+### Feature: Posting a message
+
+Again, we need to update the Redux Action to comply with the new Rails API. You will hit two problems:
+
+- The POST body will not be exactly the same as before (we don't send the `author` anymore)
+- You will hit a back-end **500** with `ActionController::InvalidAuthenticityToken`
+
+To fix the latter, you need to update the `fetch` POST request with:
+
+```js
+const csrfToken = document.querySelector('meta[name="csrf-token"]').attributes.content.value;
+
+fetch(url, {
+  // [...]
+  headers: {
+    // [...]
+    'X-CSRF-Token': csrfToken
+  },
+  credentials: 'same-origin'
+  // [...]
+})
+```
+
+## Bonus
+
+### Adding a nickname
+
+Create and run a migration to the `User` model to add a `nickname` field. Add this field in your seed and in the Devise sign-up process.
+
+### Action Cable
+
+We commented out the `setInterval` in the `<MessageList />` container. Well, the right approach when you use React in Rails + Webpacker is to use **Action Cable** and **push** new messages to all connected clients!
