@@ -138,6 +138,7 @@ gem 'webpacker', '~> 3.0'
 ```
 
 ```bash
+bundle install
 rails webpacker:install
 rails webpacker:install:react
 ```
@@ -165,6 +166,8 @@ mkdir app/javascript/chat/actions
 mkdir app/javascript/chat/components
 mkdir app/javascript/chat/containers
 mkdir app/javascript/chat/reducers
+
+yarn add react-emojione redux react-redux redux-logger redux-promise
 
 # Actions
 curl https://raw.githubusercontent.com/lewagon/chat-redux/master/src/actions/index.js > app/javascript/actions/index.js
