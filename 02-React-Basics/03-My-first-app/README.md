@@ -50,4 +50,13 @@ Launch a `webpack-dev-server` and open a browser at `http://localhost:8080`!
 
 We don't want you to waste too much time on CSS today, so try to pick up the rules you need from [this gist](https://gist.github.com/ssaunier/dbf2b76987ec62258d7ad51f0162a0ed)
 
-Good luck!
+
+### Solution
+
+Don't cheat! Try to do as much as possible **by yourself** before looking at the solution repository.
+
+<details><summary>View solution</summary><p>
+
+👉 Here's [a live example](https://lewagon.github.io/react-giphy/) of the [solution repository](https://github.com/lewagon/react-giphy).
+
+</p></details>
