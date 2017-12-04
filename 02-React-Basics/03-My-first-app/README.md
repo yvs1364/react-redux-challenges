@@ -1,8 +1,8 @@
 No tests for this challenge, let's create an App!
 
-### My First App
+### Giphy Search App
 
-The goal of this challenge is to code the Gifs app taken as an example during the lecture, and finish it!
+The goal of this challenge is to re-code from scratch (don't cheat!) the Giphy Search app from the lecture.
 
 ![Homer thinking](https://raw.githubusercontent.com/lewagon/react-redux-images/master/react/homer_thinking.png)
 
@@ -43,8 +43,8 @@ Launch a `webpack-dev-server` and open a browser at `http://localhost:8080`!
 #### 3. Guidelines
 
 - First, identify the components you need in your App.
-- Then, think static and design their `props`
-- Then, add interactivity by subscribing to events, and coding the corresponding callbacks
+- Then, think about the data and design their `props` / `state`
+- Finally, add events / callbacks
 
 #### 4. Style
 
