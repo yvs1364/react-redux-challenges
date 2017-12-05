@@ -141,7 +141,11 @@ This action can use the following fake DB (we don't have API calls yet):
 ]
 ```
 
-You can get the image of the flat using the slug and this API: https://kitt.lewagon.com/placeholder/cities/paris.
+You can get the image of the flat using the slug and this API, replacing `:slug` with `paris`, `london`, etc.
+
+```
+https://kitt.lewagon.com/placeholder/cities/:slug
+```
 
 ### 5. Active City
 
