@@ -170,7 +170,7 @@ return newBeatles;  // `newBeatles` is a different array than `beatles`
 The action creator should **call the [API](https://github.com/lewagon/wagon-chat-api#post-a-comment-post-channelmessages)**. To send a `POST` request to a JSON API with `fetch`, you can run:
 
 ```js
-const body = { key: value, key2, value2, etc: 'etc...' };
+const body = { key: value, key2: value2, etc: 'etc...' };
 const promise = fetch(url, {
   method: 'POST',
   headers: {
