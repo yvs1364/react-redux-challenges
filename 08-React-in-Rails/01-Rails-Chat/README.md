@@ -55,7 +55,7 @@ Create a `db/seeds.rb` file which:
 1. Destroy messages, users and channels (in that order)
 1. Create some channels (`general`, `paris`, `react` for instance)
 1. Create some users (needs email / password)
-1. Create some messages in several challenges.
+1. Create some messages in several channels.
 
 Then run it:
 
