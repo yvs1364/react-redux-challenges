@@ -19,7 +19,8 @@ Then you can generate a new rails app with the [Le Wagon Devise template](https:
 ```bash
 cd ~/code/<github_nickname>
 rails new \
-  -T --database postgresql \
+  --database postgresql \
+  --webpack=react
   -m https://raw.githubusercontent.com/lewagon/rails-templates/master/devise.rb \
   chat-rails-redux
 cd chat-rails-redux
@@ -151,23 +152,6 @@ end
 You should have a boilerplate view when going to [`localhost:3000/channels/general`](http://localhost:3000/channels/general).
 
 ## Front-end
-
-### Webpacker
-
-It's time to install the `webpacker` gem into our brand new Rails app!
-
-```ruby
-# Gemfile
-gem 'webpacker', '~> 3.0'
-```
-
-```bash
-bundle install
-rails webpacker:install
-rails webpacker:install:react
-```
-
-You should get a new `app/javascript` folder in your Rails app. This is where we're going to put our React Chat app!
 
 ### Importing existing React app
 
