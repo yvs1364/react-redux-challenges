@@ -154,7 +154,7 @@ Then configure Webpack to use babel:
 Let's try this out. Open your `src/index.js` file and update it with some ES6 fat arrow:
 
 ```js
-src/index.js
+// src/index.js
 const sayHello = () => {
   document.body.innerHTML = "Hello world";
 };
@@ -168,7 +168,7 @@ Now, open [localhost:8080/dist/bundle.js](http://localhost:8080/dist/bundle.js) 
 You can try a more complex example. Let's create a `Greeter` class:
 
 ```js
-src/index.js
+// src/index.js
 class Greeter {
   constructor(name) {
     this.name = name;
