@@ -12,6 +12,6 @@ test('#insertDash should work for "hello"', () => {
   expect(insertDash("hello")).toBe("hel-lo");
 });
 
-test('#insertDash should work for "anticonstitutionnellement"', () => {
+test('#insertDash should work for "Internationalization"', () => {
   expect(insertDash("Internationalization")).toBe("In-ter-nationalization");
 });
