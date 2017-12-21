@@ -128,7 +128,7 @@ ES6 is now supported by more than [95% of browsers](http://kangax.github.io/comp
 
 To add Babel to your Node.js project, run this:
 
-```js
+```bash
 yarn add babel-core babel-preset-es2015 --dev
 
 # Create a Babel config file with:
