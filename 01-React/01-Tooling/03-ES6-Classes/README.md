@@ -4,7 +4,7 @@ Make sure you are in the right folder and you download the necessary NPM package
 
 ```bash
 cd ~/code/<github_nickname>/react-redux-challenges
-cd 01-Tooling/03-ES6-Classes
+cd 01-React/01-Tooling/03-ES6-Classes
 yarn install
 ```
 
