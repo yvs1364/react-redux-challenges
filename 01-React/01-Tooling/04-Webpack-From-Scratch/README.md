@@ -4,7 +4,7 @@ The goal of this exercise is to, at once, start **from scratch** and see how the
 
 ```bash
 cd ~/code/<github_nickname>/react-redux-challenges
-cd 01-Tooling/04-Webpack-From-Scratch
+cd 01-React/01-Tooling/04-Webpack-From-Scratch
 ```
 
 💡 Notice there were no `yarn install` as the folder does not contain any `package.json`
