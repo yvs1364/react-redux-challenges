@@ -4,7 +4,7 @@ Make sure you are in the right folder and you downloaded the necessary NPM packa
 
 ```bash
 cd ~/code/<github_nickname>/react-redux-challenges
-cd 01-Tooling/02-Manipulating-Strings
+cd 01-React/01-Tooling/02-Manipulating-Strings
 yarn install
 ```
 
