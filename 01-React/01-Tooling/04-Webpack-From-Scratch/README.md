@@ -133,6 +133,9 @@ yarn add babel-core babel-preset-es2015 --dev
 
 # Create a Babel config file with:
 echo '{ "presets": [ "es2015" ] }' > .babelrc
+
+# For webpack
+yarn add babel-loader --dev 
 ```
 
 Then configure Webpack to use babel:
