@@ -4,7 +4,7 @@ Make sure you are in the right folder and you download the necessary NPM package
 
 ```bash
 cd ~/code/<github_nickname>/react-redux-challenges
-cd 02-React-Basics/01-My-first-component
+cd 01-React/02-React-Basics/01-My-first-component
 yarn install
 ```
 
