@@ -6,7 +6,7 @@ Make sure you are in the right folder and download the necessary NPM packages be
 
 ```bash
 cd ~/code/<github_nickname>/react-redux-challenges
-cd 02-React-Basics/02-Adding-state
+cd 01-React/02-React-Basics/02-Adding-state
 yarn install
 ```
 
