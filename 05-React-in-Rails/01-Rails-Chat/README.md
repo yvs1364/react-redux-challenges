@@ -392,9 +392,8 @@ The first guess is to create an API endpoint to list the channels. We could then
 First we need to **pass information from the Rails view to the React app**. We will use the [`data-` HTML attributes](https://developer.mozilla.org/en-US/docs/Learn/HTML/Howto/Use_data_attributes):
 
 ```erb
-<div id="chat_app"
-  data-channels=<%= Channel.all.to_json %>
-></div>
+<div id="chat_app" data-channels=<%= Channel.all.to_json %>>
+</div>
 ```
 
 And then you can get this information back in React!
