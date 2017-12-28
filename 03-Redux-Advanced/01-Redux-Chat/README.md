@@ -52,7 +52,7 @@ Done?
 
 ### 3. Redux state tree
 
-Before diving into the code, let's thing about the **Redux state**. We need to:
+Before diving into the code, let's think about the **Redux state**. We need to:
 
 1. Store a list of messages
 1. Store a list of channels
