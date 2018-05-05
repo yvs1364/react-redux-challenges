@@ -17,7 +17,7 @@ git remote add upstream git@github.com:lewagon/react-redux-challenges.git
 
 Be sure to replace `<github_nickname>` with yours 🤓
 
-All good? Time to [dive in the first exercise, the Setup](01-Tooling/01-Setup/README.md)
+All good? Time to [dive in the first exercise, the Setup](https://github.com/lewagon/react-redux-challenges/blob/master/01-React/01-Tooling/01-Setup/README.md#setup)
 
 ## Update the exercises
 
