@@ -70,7 +70,7 @@ See what we have here? A linter warning. By default, ESLint [recommends not to u
 Webpack will help us bundle every javascript file together to produce a neat bundled file. This is something Rails also does thanks to the [Asset Pipeline](http://guides.rubyonrails.org/asset_pipeline.html).
 
 ```bash
-yarn add webpack webpack-dev-server --dev
+yarn add webpack webpack-cli webpack-dev-server --dev
 ```
 
 Let's have a look at the `.bin` folder of our project:
@@ -135,7 +135,7 @@ yarn add babel-core babel-preset-es2015 --dev
 echo '{ "presets": [ "es2015" ] }' > .babelrc
 
 # For webpack
-yarn add babel-loader --dev 
+yarn add babel-loader --dev
 ```
 
 Then configure Webpack to use babel:
