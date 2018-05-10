@@ -44,6 +44,11 @@ To tweak the ESlint rules to your own taste, you can open the `.eslintrc.json`. 
 }
 ```
 
+Once your done, check if eslint is still available. Just run which eslint:
+
+- if it returns `node_modules/.bin/`, everything is fine;
+- if it returns can't locate eslint (or something similar), just run `yarn install` and everyting should be fine.
+
 Create a first `src/index.js` file and write a JS function which will `alert('Hello world')`. You can run the linter with:
 
 ```bash
