@@ -84,7 +84,7 @@ Let's have a look at the `.bin` folder of our project:
 ll node_modules/.bin
 ```
 
-😱 Pfiou! That's a lot! We'll use `eslint`, `webpack` and `webpack-dev-server`. You can convince yourself that writing `eslint` actually uses the binary in that folder thanks to the `$PATH`:
+😱 Wow! That's a lot! We'll use `eslint`, `webpack` and `webpack-dev-server`. You can convince yourself that writing `eslint` actually uses the binary in that folder thanks to the `$PATH`:
 
 ```bash
 type -a eslint
