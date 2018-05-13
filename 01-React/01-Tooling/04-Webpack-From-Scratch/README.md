@@ -84,7 +84,7 @@ Let's have a look at the `.bin` folder of our project:
 ll node_modules/.bin
 ```
 
-😱 Pfiou! That's a lot! We'll use `eslint`, `webpack` and `webpack-dev-server`. You can convince yourself that writing `eslint` actually uses the binary in that folder thanks to the `$PATH`:
+😱 Wow! That's a lot! We'll use `eslint`, `webpack` and `webpack-dev-server`. You can convince yourself that writing `eslint` actually uses the binary in that folder thanks to the `$PATH`:
 
 ```bash
 type -a eslint
@@ -94,8 +94,10 @@ type -a webpack-dev-server
 
 Great, now we need to configure Webpack, and have a default HTML entry point. To do that, you need two files at the root of the project:
 
-- `index.html`
-- `webpack.config.js`
+```bash
+touch index.html
+touch webpack.config.js
+```
 
 You can get a basic config [in this gist](https://gist.github.com/ssaunier/0490d2093b9f72ba67024410bfb30915).
 
@@ -150,7 +152,7 @@ Then configure Webpack to use babel:
 
   // [...]
   module: {
-    loaders: [{
+    rules: [{
       test: /\.js$/,
       exclude: /node_modules/,
       loader: 'babel-loader'
