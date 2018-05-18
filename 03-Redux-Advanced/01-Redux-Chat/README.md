@@ -147,7 +147,7 @@ This action should return an action with a payload that will be resolved by the 
 
 ### 3. Posting a message.
 
-Before call the API to post a new message, we need a new container. That would be `<MessageForm />`. It will contain a form with an `<input />` and a `<button />` to submit it. The input should be a [controlled component](https://facebook.github.io/react/docs/forms.html) with an `handleChange` function updating the **react** state of the component. This way, it's easy to read the value and to reset the value of the input to `''` just after the form submission.
+Before call the API to post a new message, we need a new container. That would be `<MessageForm />`. It will contain a form with an `<input />` and a `<button />` to submit it. The input should be a [controlled component](https://facebook.github.io/react/docs/forms.html) with a `handleChange` function updating the **react** state of the component. This way, it's easy to read the value and to reset the value of the input to `''` just after the form submission.
 
 Implement an `handleSubmit` function which will call a new action creator:
 
@@ -158,7 +158,7 @@ export function createMessage(channel, author, content) {
 }
 ```
 
-Implement this action and the reducers to update the message list. Remember that reducers should return **new** object. To create a copy of an existing array, you can run:
+Implement this action and the reducers to update the message list. Remember that reducers should return a **new** object. To create a copy of an existing array, you can run:
 
 ```js
 const beatles = [ 'john', 'paul', 'ringo' ];
@@ -183,9 +183,9 @@ const promise = fetch(url, {
 
 ### 4. Updating messages every X seconds
 
-You may now have noticed that you don't automatically get new messages from your buddy unless your **reload** the page. We'd like new message to appear automatically! We won't dive into a Websocket or ActionCable implementation, we'll rely on the good old school technique of [`setInterval`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval).
+You may now have noticed that you don't automatically get new messages from your buddy unless your **reload** the page. We'd like new messages to appear automatically! We won't dive into a Websocket or ActionCable implementation, we'll rely on the good old school technique of [`setInterval`](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setInterval).
 
-In the `<MessageList />`, implement a interval in the `componentDidMount()` method and [clear](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/clearInterval) it in the `componentWillUnmount()` (that's a good practise). This interval should trigger the `fetchMessages(channel)` action.
+In the `<MessageList />`, implement an interval in the `componentDidMount()` method and [clear](https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/clearInterval) it in the `componentWillUnmount()` (that's a good practise). This interval should trigger the `fetchMessages(channel)` action.
 
 ### 5. Scrolling the message list
 
@@ -205,7 +205,7 @@ Remember this container? We chose to ignore it until now. This container will ge
 
 ### 2. Changing the selected channel
 
-Once the `<ChannelList />` container is working, add a new `selectChannel(channel)` action. This action will be triggered when clicking on one of the channel in the list. Go back to the relevant reducers and implement a reaction to this action.
+Once the `<ChannelList />` container is working, add a new `selectChannel(channel)` action. This action will be triggered when clicking on one of the channels in the list. Go back to the relevant reducers and implement a reaction to this action.
 
 ### 3. Testing
 
