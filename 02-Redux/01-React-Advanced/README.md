@@ -139,13 +139,13 @@ body {
   background-color: white;
 }
 
-.container {
+#root {
   padding: 0;
   margin: 0;
   width: 100%;
 }
 
-.container > div {
+#root > div {
   margin-top: 20px;
   display: flex;
 }
