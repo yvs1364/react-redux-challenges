@@ -197,7 +197,7 @@ Have a look at how Babel compiles this ES6 code into ES5 with `function`.
 
 ## Debugging
 
-The Google Chrome **Source** tab works really well with this Webpack setup thanks to [**Source maps**](http://blog.teamtreehouse.com/introduction-source-maps). Remember, Webpack is only serving **one** file, `dist/bundle.js`, with a lot of code that we don't wrote. If there is an exception in the code, or if you add `debugger`, you want to only see your code!
+The Google Chrome **Source** tab works really well with this Webpack setup thanks to [**Source maps**](http://blog.teamtreehouse.com/introduction-source-maps). Remember, Webpack is only serving **one** file, `dist/bundle.js`, with a lot of code that we didn't write. If there is an exception in the code, or if you add `debugger`, you want to only see your code!
 
 Well, try it! Go ahead and add a `debugger` as the first line of the `sayHello()` function. See? You get **your** ES6 source code displayed, not the compiled version. You can even use `Cmd` + `P` to navigate through files:
 
