@@ -2,15 +2,15 @@ const path = require("path");
 
 module.exports = {
   entry: path.resolve(__dirname, "./lib/01_article.jsx"),
+  mode: "development",
   output: {
-    filename: "dist/bundle.js"
+    path: path.resolve(__dirname, "dist"),
+    filename: "main.js"
   },
+  devtool: "sourcemap",
   module: {
-    loaders: [{
-      test: /\.jsx?$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader'
-    }]
-  },
-  devtool: "sourcemap"
+    loaders: [
+      { test: /\.jsx?$/, exclude: /node_modules/, loader: "babel-loader" }
+    ]
+  }
 };
