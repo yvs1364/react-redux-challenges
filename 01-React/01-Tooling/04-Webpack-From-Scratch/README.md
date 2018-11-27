@@ -99,7 +99,35 @@ touch index.html
 touch webpack.config.js
 ```
 
-You can get a basic config [in this gist](https://gist.github.com/ssaunier/0490d2093b9f72ba67024410bfb30915).
+Copy-paste this basic config:
+
+```html
+<!-- index.html -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <script src="main.js"></script>
+  </body>
+</html>
+```
+
+```js
+// webpack.config.js
+const path = require('path');
+
+module.exports = {
+  entry: "./src/index.js",
+  mode: "development",
+  output: {
+    path: path.resolve(__dirname, "dist"),
+    filename: "main.js"
+  },
+  devtool: "sourcemap"
+};
+```
 
 Now you can launch the dev server with:
 
@@ -116,7 +144,7 @@ Awesome. Let's have a look at Webpack internals through the Browser inspector. I
 We have four HTTP requests served by the Webpack Dev Server:
 
 1. The first one serves `/` with the `index.html` file.
-2. The second one is the `dist/bundle.js` file compiled by Webpack. Open [its source](http://localhost:8080/dist/bundle.js)! There's a lot in here, if you scroll at the very bottom, you will find **your code**. The reason why there is so much is that by default, `webpack-dev-server` serves a **development** bundle, with debugging information.
+2. The second one is the `main.js` file compiled by Webpack. Open [its source](http://localhost:8080/main.js)! There's a lot in here, if you scroll at the very bottom, you will find **your code**. The reason why there is so much is that by default, `webpack-dev-server` serves a **development** bundle, with debugging information.
 3. The third one is `/sockjs-node/info`, a request to ask the Webpack Dev Server about configuration. Is the HMR (Hot Module Replacement) enabled?
 4. Yes it is! A websocket (fourth request) is opened and maintained with the server. Put your Sublime Text and Chrome side by side. You can change the code in Sublime, Save, and **without reloading**, the Chrome tab will be updated.
 
@@ -136,13 +164,13 @@ ES6 is now supported by more than [95% of browsers](http://kangax.github.io/comp
 To add Babel to your Node.js project, run this:
 
 ```bash
-yarn add babel-core babel-preset-es2015 --dev
+yarn add @babel/core @babel/preset-env --dev
 
 # Create a Babel config file with:
-echo '{ "presets": [ "es2015" ] }' > .babelrc
+echo '{ "presets": ["@babel/preset-env"] }' > .babelrc
 
 # For webpack
-yarn add babel-loader@7 --dev
+yarn add babel-loader --dev
 ```
 
 Then configure Webpack to use babel:
@@ -152,11 +180,9 @@ Then configure Webpack to use babel:
 
   // [...]
   module: {
-    rules: [{
-      test: /\.js$/,
-      exclude: /node_modules/,
-      loader: 'babel-loader'
-    }]
+    rules: [
+      { test: /\.js$/, exclude: /node_modules/, loader: "babel-loader" }
+    ]
   }
   // [...]
 ```
@@ -172,7 +198,7 @@ const sayHello = () => {
 sayHello();
 ```
 
-Now, open [localhost:8080/dist/bundle.js](http://localhost:8080/dist/bundle.js) and scroll to the very bottom.
+Now, open [localhost:8080/main.js](http://localhost:8080/main.js) and scroll to the very bottom.
  What do you see? ES5! Babel works 👌
 
 You can try a more complex example. Let's create a `Greeter` class:
@@ -197,7 +223,7 @@ Have a look at how Babel compiles this ES6 code into ES5 with `function`.
 
 ## Debugging
 
-The Google Chrome **Source** tab works really well with this Webpack setup thanks to [**Source maps**](http://blog.teamtreehouse.com/introduction-source-maps). Remember, Webpack is only serving **one** file, `dist/bundle.js`, with a lot of code that we didn't write. If there is an exception in the code, or if you add `debugger`, you want to only see your code!
+The Google Chrome **Source** tab works really well with this Webpack setup thanks to [**Source maps**](http://blog.teamtreehouse.com/introduction-source-maps). Remember, Webpack is only serving **one** file, `main.js`, with a lot of code that we didn't write. If there is an exception in the code, or if you add `debugger`, you want to only see your code!
 
 Well, try it! Go ahead and add a `debugger` as the first line of the `sayHello()` function. See? You get **your** ES6 source code displayed, not the compiled version. You can even use `Cmd` + `P` to navigate through files:
 
