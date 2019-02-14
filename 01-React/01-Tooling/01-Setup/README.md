@@ -92,7 +92,7 @@ Check everything went smoothly with:
 
 ```bash
 yarn -v # should be greater than 1.0
-type -a yarn # sohuld be '/usr/local/bin/yarn'
+type -a yarn # should be '/usr/local/bin/yarn'
 ```
 
 #### Ubuntu
