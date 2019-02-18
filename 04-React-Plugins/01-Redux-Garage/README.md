@@ -106,7 +106,7 @@ This will be the second `<Route>` of our app, for the container `<CarsNew>` to b
 
 #### Redux Form
 
-1. With the help of this morning's slides, implement your form using the [Redux Form](https://github.com/erikras/redux-form) package.
+1. With the help of this morning's slides, implement your form using the [Redux Form](https://github.com/erikras/redux-form) package. **Make sure you download version `7.2.0` by running `yarn add redux-form@7.2.0`**
 1. Once the call to the API is done, the app should [navigate by itself](https://stackoverflow.com/questions/31079081/programmatically-navigate-using-react-router) back to the home page, listing all cars.
 1. Add a presence validation on each field (you can have a look [here](https://redux-form.com/6.6.2/examples/fieldlevelvalidation/) for guidance)
 1. Add a format validation on the plate license (should be all caps and no special characters)
