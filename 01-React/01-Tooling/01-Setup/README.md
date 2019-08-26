@@ -85,7 +85,7 @@ Then check that `node -v` yields a version bigger than `8.0`.
 To install `yarn` on your terminal, knowing you already have Node.js installed, run this:
 
 ```bash
-brew install yarn --without-node
+brew install yarn
 ```
 
 Check everything went smoothly with:
