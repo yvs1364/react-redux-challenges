@@ -1,17 +1,34 @@
 // TODO: update dependencies if needed
-import React from 'react';
+import React, { Component } from 'react';
 
 // TODO: transform the following functional component into a class based component
 // TODO: set the initial state { clicked: false }
 // TODO: listen to the click event on `.article`
 // TODO: code the `handleClick` function (which adds a 'clicked' class to the `.article`)
-const Article = (props) => {
+class Article extends Component {
+state = {
+  clicked: false
+}
+handleClick = () => {
+  const clicked = this.state.clicked;
+  this.setState({ clicked });
+}
+role() {
+  let articles = "article";
+  if (this.state.clicked) {
+    articles += "article";
+  }
+  return articles;
+}
+
+render() {
   return (
-    <div className="article">
-      <h2 className="article-title">{props.title}</h2>
-      <p>{props.body}</p>
+    <div className={this.role()} onClick={this.handleClick}>
+      <h2 className="article-title">{this.props.title}</h2>
+      <p>{this.props.body}</p>
     </div>
   );
+}
 }
 
 export default Article;
